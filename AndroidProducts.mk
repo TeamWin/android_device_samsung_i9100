@@ -1,1 +1,1 @@
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_gts210wifi.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_i9100.mk
