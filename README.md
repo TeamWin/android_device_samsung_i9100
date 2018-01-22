@@ -1,12 +1,12 @@
-## TWRP device tree for Samsung Galaxy Tab S2 9.7 (Wi-Fi)
-## gts210wifi, gts210wifixx
+## TWRP device tree for Samsung Galaxy S II (International)
+## i9100
 
-Add to `.repo/local_manifests/gts210wifi.xml`:
+Add to `.repo/local_manifests/i9100.xml`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="ripee/twrp_android_device_samsung_gts210wifi" path="device/samsung/gts210wifi" remote="github" revision="android-7.1" />
+  <project name="ripee/twrp_android_device_samsung_i9100" path="device/samsung/i9100" remote="github" revision="android-7.1" />
 </manifest>
 ```
 
@@ -16,8 +16,8 @@ To build:
 
 ```sh
 . build/envsetup.sh
-lunch omni_gts210wifi-eng
+lunch omni_i9100-eng
 mka recoveryimage
 ```
 
-Kernel source: https://github.com/LineageOS/android_kernel_samsung_gts2/tree/cm-14.1
+Kernel source: https://github.com/LineageOS/android_kernel_samsung_smdk4412/tree/cm-14.1
