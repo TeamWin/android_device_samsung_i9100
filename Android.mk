@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-ifneq ($(filter gts210wifi gts210wifixx,$(TARGET_DEVICE)),)
+ifneq ($(filter i9100,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
