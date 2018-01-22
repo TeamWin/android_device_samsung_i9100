@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +14,18 @@
 # limitations under the License.
 #
 
-# WARNING: Everything listed here will be built on ALL platforms,
-# including x86, the emulator, and the SDK.  Modules must be uniquely
-# named (liblights.tuna), and must build everywhere, or limit themselves
-# to only building on ARM if they include assembly. Individual makefiles
-# are responsible for having their own logic, for fine-grained control.
+# This contains the module build definitions for the hardware-specific
+# components for this device.
+#
+# As much as possible, those components should be built unconditionally,
+# with device-specific names to avoid collisions, to avoid device-specific
+# bitrot and build breakages. Building a component unconditionally does
+# *not* include it on all devices, so it is safe even with hardware-specific
+# components.
+
+ifneq ($(filter gts210wifi gts210wifixx,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
-
-ifeq ($(TARGET_DEVICE),i9100)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

@@ -1,50 +1,67 @@
-#
-# Copyright (C) 2012 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+DEVICE_TREE := device/samsung/gts210wifi
 
-# This variable is set first, so it can be overridden
-# by BoardConfigVendor.mk
+CM_PLATFORM_SDK_VERSION := 7	# Required for libf2fs.so
+override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
 
--include device/samsung/galaxys2-common/BoardCommonConfig.mk
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME := universal5433
 
-TARGET_BOARD_INFO_FILE := device/samsung/i9100/board-info.txt
+# Platform
+TARGET_BOARD_PLATFORM := exynos5
+TARGET_BOARD_PLATFORM_GPU := mali-t760mp6
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/i9100/bluetooth
+# Flags
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
-# Inline kernel building
-TARGET_KERNEL_SOURCE := kernel/samsung/smdk4412
-TARGET_KERNEL_CONFIG := lineageos_i9100_defconfig
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_SMP := true
 
-# assert
-TARGET_OTA_ASSERT_DEVICE := galaxys2,i9100,GT-I9100,GT-I9100M,GT-I9100P,GT-I9100T,SC-02C
+# Boot image
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/kernel
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/mkbootimg.mk
+BOARD_KERNEL_CMDLINE := # Exynos doesn't take cmdline arguments from boot image
+BOARD_KERNEL_BASE := 0x10000000
+BOARD_KERNEL_PAGESIZE := 2048
+# 000RU = recovery kernel, 000KU = system kernel
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --board SYSMAGIC000RU --dt $(DEVICE_TREE)/dt.img
 
-# Use the non-open-source parts, if they're present
--include vendor/samsung/i9100/BoardConfigVendor.mk
+# Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x105C0000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00D00000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 0x105C0000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105C0000
+BOARD_FLASH_BLOCK_SIZE := 131072
 
-# F2FS Filesystem
+# File systems
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
-# TWRP
-RECOVERY_VARIANT := twrp
-TW_THEME := portrait_mdpi
-TWRP_NEW_THEME := true
-HAVE_SELINUX := true
+# TWRP specific build flags
+TW_THEME := landscape_hdpi
+RECOVERY_SDCARD_ON_DATA := true
+BOARD_HAS_NO_REAL_SDCARD := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/15400000.usb/15400000.dwc3/gadget/lun%d/file"
+TW_BRIGHTNESS_PATH := "/sys/devices/13800000.decon_fb/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_INCLUDE_CRYPTO := true
-TW_HAS_DOWNLOAD_MODE := true
+TW_DEFAULT_BRIGHTNESS := 162
 TW_NO_REBOOT_BOOTLOADER := true
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
+TW_HAS_DOWNLOAD_MODE := true
+TW_NO_EXFAT_FUSE := true
+TW_MTP_DEVICE := "/dev/mtp_usb"
+TW_EXCLUDE_SUPERSU := true
+
+# Touchscreen correction
+RECOVERY_TOUCHSCREEN_SWAP_XY := true
+RECOVERY_TOUCHSCREEN_FLIP_Y := true
+
+# Encryption support
+TW_INCLUDE_CRYPTO := true

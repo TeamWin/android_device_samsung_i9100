@@ -1,3 +1,0 @@
-require board=smdk4210
-require version-bootloader=I9100XXLPH
-
