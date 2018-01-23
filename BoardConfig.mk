@@ -5,11 +5,11 @@ override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := universal5433
+TARGET_BOOTLOADER_BOARD_NAME := smdk4210
 
 # Platform
-TARGET_BOARD_PLATFORM := exynos5
-TARGET_BOARD_PLATFORM_GPU := mali-t760mp6
+TARGET_BOARD_PLATFORM := exynos4
+TARGET_SOC := exynos4210
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -20,7 +20,7 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a9
 TARGET_CPU_SMP := true
 
 # Boot image
