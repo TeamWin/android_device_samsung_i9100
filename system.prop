@@ -1,8 +1,7 @@
-ro.boot.bootdevice=15540000.dwmmc0
 ro.boot.selinux=permissive
-ro.hardware=universal5433
-ro.chipname=exynos5433
-ro.arch=exynos5433
+ro.hardware=smdk4210
+ro.chipname=exynos4210
+ro.arch=exynos4210
 ro.lcd_min_brightness=0
 ro.lcd_brightness=162
 ro.sf.lcd_density=240
