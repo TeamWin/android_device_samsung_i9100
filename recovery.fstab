@@ -1,4 +1,3 @@
-
 # mountpoint    fstype		device				flags
 
 /efs            ext4		/dev/block/mmcblk0p1		flags=display="EFS";backup=1
