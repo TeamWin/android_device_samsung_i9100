@@ -63,7 +63,7 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_NO_EXFAT_FUSE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
-TW_USE_TOOLBOX
+TW_USE_TOOLBOX := true
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
