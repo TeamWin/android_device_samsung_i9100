@@ -11,9 +11,6 @@ $(call inherit-product, vendor/omni/config/common.mk)
 PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
-# Use Emulated Storage (requires re-PIT)
-TARGET_USE_EMULATED_STORAGE := true
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100
 PRODUCT_NAME := omni_i9100
