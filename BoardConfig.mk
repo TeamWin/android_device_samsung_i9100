@@ -64,7 +64,6 @@ TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
-RECOVERY_SDCARD_ON_DATA := $(TARGET_USE_EMULATED_STORAGE)
 TW_EXCLUDE_SUPERSU := true
 
 # Encryption support
