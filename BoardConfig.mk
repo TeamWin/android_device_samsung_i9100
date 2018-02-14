@@ -56,7 +56,6 @@ TW_THEME := portrait_mdpi
 TWRP_NEW_THEME := true
 HAVE_SELINUX := true
 TW_MAX_BRIGHTNESS := 255
-TW_INCLUDE_CRYPTO := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_INTERNAL_STORAGE_PATH := "/emmc"
@@ -65,9 +64,8 @@ TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
+RECOVERY_SDCARD_ON_DATA := $(TARGET_USE_EMULATED_STORAGE)
 TW_EXCLUDE_SUPERSU := true
-#TW_USE_BUSYBOX_SH := true
-#TW_INCLUDE_PARTED := true
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
