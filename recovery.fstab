@@ -1,4 +1,4 @@
-# mountpoint    fstype		device				flags
+# mountpoint    fstype		device				        flags
 
 /efs            ext4		/dev/block/mmcblk0p1		flags=display="EFS";backup=1
 /boot           emmc		/dev/block/mmcblk0p5		flags=backup=1
@@ -7,8 +7,8 @@
 /cache          ext4		/dev/block/mmcblk0p7		flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
 /system         ext4		/dev/block/mmcblk0p9		flags=display="System";backup=1;wipeingui
 /data           ext4		/dev/block/mmcblk0p10		flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;length=-16384
-/misc           emmc		/dev/block/mmcblk0p11		flags=display="Misc";backup=1
 /preload        ext4		/dev/block/mmcblk0p12		flags=display="Preload";backup=1
 
-/external_sd    vfat		/dev/block/mmcblk1p1		flags=display="Micro SDCard";storage;removable;wipeingui
-/usbotg         vfat		/dev/block/sda1                 flags=display="USB-OTG";storage;removable;wipeingui
+/sdcard0        vfat		/dev/block/mmcblk0p11		flags=display="Internal-Storage";storage;settingsstorage;wipeingui
+/sdcard1        vfat		/dev/block/mmcblk1p1		flags=display="External-Storage";storage;removable;wipeingui
+/usbotg         vfat		/dev/block/sda1			    flags=display="USB-OTG";storage;removable;wipeingui
