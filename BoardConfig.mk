@@ -61,7 +61,6 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 TW_EXCLUDE_SUPERSU := true
-RECOVERY_SDCARD_ON_DATA := $(TARGET_USE_EMULATED_STORAGE)
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
