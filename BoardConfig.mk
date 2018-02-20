@@ -50,6 +50,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
+HAVE_SELINUX := true
 TW_MAX_BRIGHTNESS := 255
 TW_INCLUDE_PARTED := true
 TW_HAS_DOWNLOAD_MODE := true
