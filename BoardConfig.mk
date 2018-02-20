@@ -60,16 +60,16 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
-RECOVERY_SDCARD_ON_DATA := true
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
+TW_USE_BUSYBOX_SH := true
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 162
-TW_NO_REBOOT_BOOTLOADER := true
+TW_INCLUDE_PARTED := true
 TW_HAS_DOWNLOAD_MODE := true
-TW_NO_EXFAT_FUSE := true
-TW_MTP_DEVICE := "/dev/mtp_usb"
+TW_NO_REBOOT_BOOTLOADER := true
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
+RECOVERY_SDCARD_ON_DATA := true
 TW_EXCLUDE_SUPERSU := true
+TW_NO_EXFAT_FUSE := true
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
