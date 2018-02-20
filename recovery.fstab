@@ -11,4 +11,4 @@
 
 /sdcard0        vfat		/dev/block/mmcblk0p11		flags=display="Internal Storage";storage;settingsstorage;wipeingui
 /sdcard1        vfat		/dev/block/mmcblk1p1		flags=display="External Storage";storage;removable;wipeingui
-/usbotg         vfat		/dev/block/sda1			    flags=display="USB-OTG";storage;removable;wipeingui
+/usbotg         vfat		/dev/block/sda1			  flags=display="USB-OTG";storage;removable;wipeingui
