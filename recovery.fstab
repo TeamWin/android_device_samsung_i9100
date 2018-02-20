@@ -2,12 +2,12 @@
 
 /efs            ext4		/dev/block/mmcblk0p1		flags=display="EFS";backup=1
 /boot           emmc		/dev/block/mmcblk0p5		flags=display="Boot";backup=1
-/recovery       emmc		/dev/block/mmcblk0p6		flags=display="Recovery";backup=1
+/recovery       emmc		/dev/block/mmcblk0p6		
 
 /cache          ext4		/dev/block/mmcblk0p7		flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
 /system         ext4		/dev/block/mmcblk0p9		flags=display="System";backup=1;wipeingui
 /data           ext4		/dev/block/mmcblk0p10		flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;length=-16384
-/preload        ext4		/dev/block/mmcblk0p12		flags=display="Preload";backup=1;wipeingui
+/preload        ext4		/dev/block/mmcblk0p12		flags=display="Preload";backup=1
 
 /sdcard0        vfat		/dev/block/mmcblk0p11		flags=display="Internal Storage";storage;settingsstorage;wipeingui
 /sdcard1        vfat		/dev/block/mmcblk1p1		flags=display="External Storage";storage;removable;wipeingui
