@@ -59,6 +59,10 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 TW_EXCLUDE_SUPERSU := true
 TW_NO_EXFAT_FUSE := true
+TW_INTERNAL_STORAGE_PATH := "/sdcard0"	
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard0"	
+TW_EXTERNAL_STORAGE_PATH := "/sdcard1"	
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 TW_MTP_DEVICE := "/dev/mtp_usb"
 
 # Encryption support
