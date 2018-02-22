@@ -1,4 +1,3 @@
-
 # mountpoint	fstype		device				flags
 
 /boot		emmc		/dev/block/mmcblk0p5		flags=backup=1
