@@ -60,7 +60,6 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 TW_EXCLUDE_SUPERSU := true
 TW_NO_EXFAT_FUSE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
-RECOVERY_SDCARD_ON_DATA := true
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
