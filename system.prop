@@ -1,3 +1,5 @@
+ro.boot.bootdevice=dw_mmc
+ro.boot.selinux=permissive
 ro.hardware=smdk4210
 ro.chipname=exynos4210
 ro.arch=exynos4210
