@@ -62,6 +62,7 @@ BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 TW_EXCLUDE_SUPERSU := true
 TW_NO_EXFAT_FUSE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
+RECOVERY_SDCARD_ON_DATA := $(TARGET_USE_EMULATED_STORAGE)
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
