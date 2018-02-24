@@ -16,14 +16,16 @@
 
 LOCAL_PATH := $(call my-dir)
 
-INSTALLED_BOOTIMAGE_TARGET := $(LOCAL_PATH)/boot.img
+DEVICE_TREE := device/samsung/i9100
+
+INSTALLED_BOOTIMAGE_TARGET := $(DEVICE_TREE)/boot.img
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_FILES) $(BOOTIMAGE_EXTRA_DEPS)
 	$(call pretty,"Target boot image: $@")
 	$(hide) $(MKBOOTIMG) $(INTERNAL_BOOTIMAGE_ARGS) $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	$(hide) $(call assert-max-image-size,$@,$(BOARD_BOOTIMAGE_PARTITION_SIZE))
 	@echo "Made boot image: $@"
 
-recovery_uncompressed_device_ramdisk := $(LOCAL_PATH)/ramdisk-recovery-device.cpio
+recovery_uncompressed_device_ramdisk := $(DEVICE_TREE)/ramdisk-recovery-device.cpio
 $(recovery_uncompressed_device_ramdisk): $(MKBOOTFS) \
 		$(INSTALLED_RAMDISK_TARGET) \
 		$(INTERNAL_RECOVERYIMAGE_FILES) \
@@ -36,7 +38,7 @@ $(recovery_uncompressed_device_ramdisk): $(MKBOOTFS) \
 	@echo "----- Making uncompressed recovery ramdisk ------"
 	$(hide) $(MKBOOTFS) $(TARGET_RECOVERY_ROOT_OUT) > $@
 
-uncompressed_ramdisk := $(LOCAL_PATH)/ramdisk.cpio
+uncompressed_ramdisk := $(DEVICE_TREE)/ramdisk.cpio
 $(uncompressed_ramdisk): $(INSTALLED_RAMDISK_TARGET)
 	zcat $< > $@
 
