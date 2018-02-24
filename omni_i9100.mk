@@ -14,6 +14,15 @@ PRODUCT_COPY_FILES += \
 # Use Emulated Storage (requires re-PIT)
 TARGET_USE_EMULATED_STORAGE := true
 
+# TWRP
+ifeq ($(TARGET_USE_EMULATED_STORAGE),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/twrp-emu.fstab:recovery/root/etc/twrp.fstab
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100
 PRODUCT_NAME := omni_i9100
