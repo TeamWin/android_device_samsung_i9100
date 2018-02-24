@@ -65,7 +65,6 @@ TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
-BOARD_PROVIDES_BOOTLOADER_MESSAGE := true
 TW_EXCLUDE_SUPERSU := true
 TW_NO_EXFAT_FUSE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
