@@ -3,6 +3,8 @@ DEVICE_TREE := device/samsung/i9100
 CM_PLATFORM_SDK_VERSION := 7	# Required for libf2fs.so
 override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
 
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_LEGACY_MMAP := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -13,8 +15,8 @@ TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
+BOARD_GLOBAL_CFLAGS += -DEXYNOS4_ENHANCEMENTS
+BOARD_GLOBAL_CFLAGS += -DEXYNOS4210_ENHANCEMENTS
 
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos4
@@ -38,6 +40,9 @@ BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
+# Memory management
+MALLOC_SVELTE := true
+
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -57,8 +62,15 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
+BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
+BOARD_USES_MMCUTILS := true
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_PROVIDES_BOOTLOADER_MESSAGE := true
 TW_EXCLUDE_SUPERSU := true
 TW_NO_EXFAT_FUSE := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_SUPPRESS_EMMC_WIPE := true
+BOARD_RECOVERY_SWIPE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 
 # Encryption support
