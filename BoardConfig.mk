@@ -51,7 +51,6 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
