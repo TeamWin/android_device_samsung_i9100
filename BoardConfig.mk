@@ -51,6 +51,8 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
+HAVE_SELINUX := true
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
@@ -59,6 +61,7 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_NO_EXFAT_FUSE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
+RECOVERY_SDCARD_ON_DATA := $(TARGET_USE_EMULATED_STORAGE)
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
