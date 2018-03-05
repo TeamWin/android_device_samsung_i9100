@@ -12,16 +12,16 @@ PRODUCT_COPY_FILES += \
     bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 # Use Emulated Storage (requires re-PIT)
-TARGET_USE_EMULATED_STORAGE := true
+# TARGET_USE_EMULATED_STORAGE := true
 
 # TWRP
-ifeq ($(TARGET_USE_EMULATED_STORAGE),true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/twrp-emu.fstab:recovery/root/etc/twrp.fstab
-else
+# ifeq ($(TARGET_USE_EMULATED_STORAGE),true)
+# PRODUCT_COPY_FILES += \
+#     $(LOCAL_PATH)/twrp-emu.fstab:recovery/root/etc/twrp.fstab
+# else
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
-endif
+# endif
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100
