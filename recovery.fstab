@@ -7,6 +7,6 @@
 /system		ext4		/dev/block/mmcblk0p9		flags=display="System";backup=1;wipeingui
 /data		ext4		/dev/block/mmcblk0p10		flags=display="Data";backup=1;wipeingui;wipeduringfactoryreset;length=-16384
 
-/sdcard0	vfat		/dev/block/mmcblk0p11		flags=display="Internal-Storage";storage;settingsstorage;wipeingui
-/sdcard1	vfat		/dev/block/mmcblk1p1		flags=display="External-Storage";storage;removable;wipeingui
+/sdcard0	ext4		/dev/block/mmcblk0p11		flags=display="Internal Storage";storage;settingsstorage;wipeingui
+/sdcard1	vfat		/dev/block/mmcblk1p1		flags=display="External Storage";storage;removable;wipeingui
 /usbotg		vfat		/dev/block/sda1			flags=display="USB-OTG";storage;removable;wipeingui
