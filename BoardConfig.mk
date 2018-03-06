@@ -52,7 +52,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
 HAVE_SELINUX := true
-BOARD_HAS_NO_REAL_SDCARD := true
+#BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
 #TW_INCLUDE_PARTED := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
