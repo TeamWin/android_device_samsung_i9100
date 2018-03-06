@@ -63,10 +63,6 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_NO_EXFAT_FUSE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/sdcard1"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard1"
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
