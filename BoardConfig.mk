@@ -52,7 +52,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
 HAVE_SELINUX := true
-BOARD_HAS_NO_REAL_SDCARD := true
+#BOARD_HAS_NO_REAL_SDCARD := true
 TW_INCLUDE_PARTED := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
