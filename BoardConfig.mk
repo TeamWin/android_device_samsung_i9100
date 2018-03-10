@@ -4,6 +4,7 @@ CM_PLATFORM_SDK_VERSION := 7	# Required for libf2fs.so
 override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
 
 # Platform
+BOARD_USES_LEGACY_MMAP := true
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -51,8 +52,6 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # TWRP specific build flags
 TW_THEME := portrait_mdpi
 HAVE_SELINUX := true
-#RECOVERY_SDCARD_ON_DATA := true
-TW_INCLUDE_PARTED := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/platform/s5p-tmu/temperature"
 TW_MAX_BRIGHTNESS := 255
