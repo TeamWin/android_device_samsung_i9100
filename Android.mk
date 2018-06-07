@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),i9100)
+ifeq ($(TARGET_DEVICE),galaxys2 i9100 GT-I9100 GT-I9100M GT-I9100P GT-I9100T SC-02C)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
